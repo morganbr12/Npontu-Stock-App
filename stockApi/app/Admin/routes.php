@@ -12,5 +12,10 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('users', UsersController::class);
+    $router->resource('categories', CategoryController::class);
+    $router->resource('items', ItemsController::class);
+    $router->resource('reports', ReportsController::class);
+    $router->resource('audit-trails', AuditTrailsController::class);
 
 });
