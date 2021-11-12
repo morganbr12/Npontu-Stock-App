@@ -38,7 +38,7 @@ class CategoryController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
-        $grid->column('img_url', __('Image'));
+        // $grid->column('img_url', __('Image'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -73,9 +73,10 @@ class CategoryController extends AdminController
     protected function form()
     {
         $form = new Form(new Category());
-
+        // $form->select('parent_id', __('Parent Category'))->options((new Category())::selectOptions());
         $form->text('name', __('Name'));
-        $form->file('img_url', __('Image'));
+        $form->textarea('img_url', __('Image'));
+        // $form->number('order', __('Order'))->default(1);
 
         return $form;
     }

@@ -19,6 +19,8 @@ return [
         ],
     ],
 
+    
+
     // 上传 配置
     'upload' => [
         /* 前后端通信相关的配置,注释只允许使用多行方式 */
@@ -114,3 +116,10 @@ return [
         ], /* 列出的文件类型 */
     ],
 ];
+
+$form->UEditor('content');
+// options 中参数会覆盖 extensions.ueditor.config 中参数
+$form->UEditor('content')->options(['initialFrameHeight' => 800]);
+
+// 如果 extensions.ueditor.field_type 定义为 xxxEditor
+// $form->xxxEditor('content');

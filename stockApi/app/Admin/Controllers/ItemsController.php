@@ -31,7 +31,6 @@ class ItemsController extends AdminController
         $grid->column('category', __('Category'));
         $grid->column('description', __('Description'));
         $grid->column('price', __('Price'));
-        $grid->column('img_url', __('Image'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -71,7 +70,7 @@ class ItemsController extends AdminController
         $form = new Form(new Item());
         $form->text('name', __('Name'));
         $form->text('category', __('Category'));
-        $form->select('parent_id', __('Parent Category'))->options((new Category())::selectOptions());
+        // $form->select('parent_id', __('Parent Category'))->options((new Category())::selectOptions());
         $form->decimal('price', __('Price'));
         $form->image('img_url', __('Image'))->uniqueName();
         $form->UEditor('description', __('Description'));
