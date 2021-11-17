@@ -7,7 +7,7 @@ import 'package:stock_market/Screens/searchs.dart';
 
 
 class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+  Login({Key key}) : super(key: key);
 
   @override
   _LoginState createState() => _LoginState();
@@ -40,10 +40,7 @@ _showMsg(msg) { //
       SharedPreferences localStorage = await SharedPreferences.getInstance();
      localStorage.setString('token', body['token']);
       localStorage.setString('user', json.encode(body['user']));
-      Navigator.push(
-          context,
-          new MaterialPageRoute(
-              builder: (context) => SearchPage()));
+      Navigator.push(context,new MaterialPageRoute(builder: (context) => SearchPage()));
     }else{
       _showMsg(body['message']);
     }
