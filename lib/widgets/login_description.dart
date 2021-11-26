@@ -11,7 +11,7 @@ class LoginWritings extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          Container(
-           width: 200,
+           width: 210,
            margin: const EdgeInsets.only(bottom: 25),
              child: const Text(
                  'Welcome Back',

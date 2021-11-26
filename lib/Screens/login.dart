@@ -13,7 +13,11 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-_showMsg(msg) { //
+class _LoginState extends State<Login> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController textController = TextEditingController();
+
+  _showMsg(msg) { //
     final snackBar = SnackBar(
       backgroundColor: Color(0xFF363f93),
       content: Text(msg),
@@ -24,7 +28,7 @@ _showMsg(msg) { //
         },
       ),
     );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    // ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   _login() async {
@@ -38,15 +42,13 @@ _showMsg(msg) { //
     print(body);
     if(body['success']){
       SharedPreferences localStorage = await SharedPreferences.getInstance();
-     localStorage.setString('token', body['token']);
+      localStorage.setString('token', body['token']);
       localStorage.setString('user', json.encode(body['user']));
-      Navigator.push(context,new MaterialPageRoute(builder: (context) => SearchPage()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchPage()));
     }else{
       _showMsg(body['message']);
     }
   }
-
-class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Container();

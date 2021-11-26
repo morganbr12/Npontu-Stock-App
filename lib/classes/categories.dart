@@ -9,5 +9,5 @@ class diff_Categories {
     @required this.id,
     @required this.title,
     @required this.image,
-});
+  });
 }

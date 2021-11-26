@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // This buttons are for the initial logins
 
-import '../widgets/g_button.dart';
+
 
 class Buttons extends StatelessWidget {
   const Buttons({Key key}) : super(key: key);
