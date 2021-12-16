@@ -5,7 +5,7 @@ class Post {
   String? body;
   String? name;
   String? category;
-  double? price;
+  Decimal? price;
   String? image;
   User? user;
   String? created_at;
